@@ -1,0 +1,15 @@
+.mainButton {
+	width: 200px;
+	height: 50px;
+}
+
+.mainButton .x-btn-inner {
+    border-color:#EE0000;
+    font-size: 24px !important;
+    line-height: 46px;
+    height: 50px;
+}
+
+.mainButton  .x-btn-button {
+	height: 50px;
+}
