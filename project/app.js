@@ -9,7 +9,6 @@ Ext.require([
 
 Ext.application({
     name : 'TestApp',
-
     
     launch : function(){
         var dialog;
