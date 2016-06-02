@@ -2,6 +2,7 @@ Ext.require([
     'Ext.Msg',
     'Ext.panel.*',
     'store.ComponentsStore',
+    'view.window.DateSelectField',
     'view.window.FieldRow',
     'view.window.ScrollableContainer',
     'view.ModalWindow'
@@ -9,7 +10,7 @@ Ext.require([
 
 Ext.application({
     name : 'TestApp',
-    
+
     launch : function(){
         var dialog;
         var mainPanel = Ext.create('Ext.panel.Panel', {

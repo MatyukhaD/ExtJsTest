@@ -13,3 +13,20 @@
 .mainButton  .x-btn-button {
 	height: 50px;
 }
+
+.plusButton  .x-btn-button  {
+    width: 16px;
+    height: 16px;
+}
+
+.plusButton .x-btn-inner {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0;
+    position: relative;
+    top: -1px;
+}
+
+.plusButton .x-btn-default-small {
+    padding: 0px;
+}

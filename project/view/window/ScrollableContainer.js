@@ -8,6 +8,12 @@ Ext.define('view.window.ScrollableContainer', {
      layout: {
          type: 'vbox'
      },
+    listeners: {
+        plusClicked: function(button, index) {
+            console.log('button clicked!');
+        }
+    },
+
     items: [
         {
             xtype: 'textfield',
