@@ -10,6 +10,7 @@ Ext.require([
 Ext.application({
     name : 'TestApp',
 
+    
     launch : function(){
         var dialog;
         var mainPanel = Ext.create('Ext.panel.Panel', {
