@@ -6,6 +6,7 @@ Ext.define('view.ModalWindow', {
         closeAction:'hide',
         plain: true,
         modal: true,
+        resizeHandles: 's n',
         title: 'Filters',
         tools:[{
             id:'help',
