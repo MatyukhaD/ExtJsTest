@@ -1,6 +1,7 @@
 Ext.require([
     'Ext.Msg',
     'Ext.panel.*',
+    'store.ComponentsStore',
     'view.window.FieldRow',
     'view.window.ScrollableContainer',
     'view.ModalWindow'
