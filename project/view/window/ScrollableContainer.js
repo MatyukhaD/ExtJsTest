@@ -8,9 +8,28 @@ Ext.define('view.window.ScrollableContainer', {
      layout: {
          type: 'vbox'
      },
+    height: 300,
+    autoScroll: true,
     listeners: {
-        plusClicked: function(button, index) {
-            console.log('button clicked!');
+        plusClicked: function(button) {
+            var btnParent = button.up('container');
+            var lastIndex = this.items.length - 1;
+
+            btnParent.remove(button);
+            this.insert(lastIndex,{
+                xtype: 'fieldRow'
+            })
+        },
+        minusClicked: function(button) {
+            var btnParent = button.up('container');
+            var rowIndex = this.items.indexOf(btnParent);
+            
+            if ((rowIndex < 3) || (rowIndex === this.items.length - 2)) {
+                return;
+            }
+
+            var btnParent = button.up('container');
+            this.remove(btnParent);
         }
     },
 
@@ -25,8 +44,12 @@ Ext.define('view.window.ScrollableContainer', {
             width: 20,
         },
         {
-            xtype: 'fieldRow',
-            id: 'fields'
+            xtype: 'fieldRow'
+        },
+        {
+            xtype: 'textfield',
+            name: 'name',
+            fieldLabel: 'Filter name'
         }
     ]
 });

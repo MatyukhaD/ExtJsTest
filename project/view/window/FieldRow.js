@@ -1,7 +1,7 @@
 Ext.define('view.window.FieldRow', {
     extend : 'Ext.Container',
     alias: 'widget.fieldRow',
-    height: 200,
+    height: 30,
     layout:{
         type: 'hbox',
         align: 'center',
@@ -39,13 +39,13 @@ Ext.define('view.window.FieldRow', {
                         if (value === 'date') {
                             if (visibleComponent.xtype !== 'dateSelect') {
                                 parent.remove(visibleComponent);
-                                parent.add(Ext.create('widget.dateSelect'));
+                                parent.insert(2,Ext.create('widget.dateSelect'));
                             }
                         }
                         else {
                             if (visibleComponent.xtype !== 'textfield') {
                                 parent.remove(visibleComponent);
-                                parent.add({
+                                parent.insert(2,{
                                     xtype: 'textfield',
                                     name: 'typeSymbol',
                                     emptyText: 'Type symbol',
@@ -83,7 +83,7 @@ Ext.define('view.window.FieldRow', {
                 click: function(b,e) {
                     var parent =  b.up('container');
                     var gParent = parent.up('container');
-                    gParent.fireEvent('plusClicked',b,1);
+                    gParent.fireEvent('plusClicked',b);
                 }
             }
         },
@@ -93,7 +93,9 @@ Ext.define('view.window.FieldRow', {
             cls: 'plusButton',
             listeners: {
                 click: function(b,e) {
-
+                    var parent =  b.up('container');
+                    var gParent = parent.up('container');
+                    gParent.fireEvent('minusClicked',b);
                 }
             }
         }
