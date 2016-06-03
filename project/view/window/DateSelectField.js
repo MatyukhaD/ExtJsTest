@@ -15,6 +15,7 @@ Ext.define('view.window.DateSelectField', {
             xtype: 'combo',
             name: 'daySelect',
             emptyText:'DD',
+            fieldCls: 'gray-button',
             store:Ext.create('store.DaysStore'),
             width: 60,
             queryMode: 'local',
@@ -25,6 +26,7 @@ Ext.define('view.window.DateSelectField', {
         {
             xtype: 'combo',
             name: 'monthSelect',
+            fieldCls: 'gray-button',
             emptyText:'MM',
             store:Ext.create('store.MonthStore'),
             width: 60,
@@ -35,6 +37,7 @@ Ext.define('view.window.DateSelectField', {
         },
         {
             xtype: 'combo',
+            fieldCls: 'gray-button',
             name: 'yearsSelect',
             emptyText:'YY',
             store:Ext.create('store.YearsStore'),

@@ -30,3 +30,60 @@
 .plusButton .x-btn-default-small {
     padding: 0px;
 }
+
+.mainWindow {
+    background-color: gray;
+    border-radius: 0px;
+    box-shadow: none;
+    padding: 0;
+}
+
+.windowBody {
+    /*width: 800px !important;*/
+    margin-top: 10px;
+    /*color: white;*/
+    background-color: white;
+}
+
+.headerCls {
+    background-color: gray;
+    border-radius: 0px;
+    height: 30px;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.headerCls .x-header-text {
+    font-size: 14px;
+    color: white
+}
+
+.headerCls .x-tool {
+    background-color: transparent;
+}
+
+.headerCls .x-tool-img {
+
+}
+
+.headerCls .x-tool-close {
+    background-position: 0px 0px !important;
+    background-image: url('images/close.png') !important;
+    background-color: transparent;
+}
+
+.headerCls .x-tool-help {
+    background-color: transparent;
+}
+
+.gray-button {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f4f5f5), to(#CCCCCC));
+    background-image: -webkit-linear-gradient(top, #f4f5f5, #CCCCCC);
+    background-image: -moz-linear-gradient(top, #f4f5f5, #CCCCCC);
+    background-image: -ms-linear-gradient(top, #f4f5f5, #CCCCCC);
+    background-image: -o-linear-gradient(top, #f4f5f5, #CCCCCC);
+    background-image: linear-gradient(to bottom, #f4f5f5, #CCCCCC);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#f4f5f5, endColorstr=#CCCCCC);
+}
+

@@ -42,10 +42,28 @@ Ext.define('view.window.FieldRow', {
     },
     autoScroll: true,
     items: [
+        // {
+        //     xtype: 'button',
+        //     text: 'Select this',
+        //     menu: {
+        //         items: [{
+        //             text: 'Item 1',
+        //             handler: function() {
+        //                 console.log('Item 1');
+        //             }
+        //         }, {
+        //             text: 'Item 2',
+        //             handler: function() {
+        //                 console.log('Item 2');
+        //             }
+        //         }]
+        //     }
+        // }
         {
             xtype: 'combo',
             name: 'select1',
             emptyText: 'Select this',
+            fieldCls: 'gray-button',
             //store: Ext.create('store.ComponentsStore'),
             store: Ext.create('store.ComponentsStore'),
 
@@ -93,6 +111,7 @@ Ext.define('view.window.FieldRow', {
             emptyText:'And this',
             store:Ext.create('store.PositionsStore'),
             width: 100,
+            fieldCls: 'gray-button',
             queryMode: 'local',
             displayField: 'name',
             valueField: 'value',
@@ -103,7 +122,7 @@ Ext.define('view.window.FieldRow', {
             xtype: 'textfield',
             name: 'typeSymbol',
             emptyText: 'Type symbol',
-            width: 200
+            width: 210
         },
         {
             xtype: 'addRowButton'

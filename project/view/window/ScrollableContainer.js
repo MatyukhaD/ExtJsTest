@@ -2,7 +2,6 @@ Ext.define('view.window.RadioGroup', {
     extend: 'Ext.form.RadioGroup',
     alias: 'widget.filterRadioGroup',
     width: 520,
-    fieldLabel: 'Radio Buttons',
     columns: [120,120,120],
     vertical: false,
     labelWidth: 95,
@@ -18,8 +17,10 @@ Ext.define('view.window.ButtonGroup', {
     extend: 'Ext.Container',
     alias: 'widget.buttonGroup',
     width: 520,
+    height: 50,
     layout: {
         type: 'hbox',
+        pack: 'start'
     },
     defaults: {
         margins: '0 10 0 0'
@@ -29,17 +30,23 @@ Ext.define('view.window.ButtonGroup', {
         {
             xtype: 'button',
             text: 'Apply filter',
-            cls: 'normalButton'
+            cls: 'gray-button',
+            width: 120,
+            height: 20
         },
         {
             xtype: 'button',
             text: 'Save filter',
-            cls: 'normalButton'
+            cls: 'gray-button',
+            width: 120,
+            height: 20
         },
         {
             xtype: 'button',
             text: 'Cancel',
-            cls: 'normalButton'
+            cls: 'gray-button',
+            width: 100,
+            height: 20
         }
     ]
 });
@@ -56,7 +63,6 @@ Ext.define('view.window.ScrollableContainer', {
      layout: {
          type: 'vbox'
      },
-
      items: [
         {
             xtype: 'textfield',
@@ -104,7 +110,7 @@ Ext.define('view.window.ScrollableContainer', {
                 {
                     xtype: 'container',
                     defaults: {
-                        margin: '0 5 0 5'
+                        margin: '15 0 0 0'
                     },
                     layout: {
                         type: 'vbox'
