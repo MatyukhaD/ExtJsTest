@@ -1,3 +1,33 @@
+Ext.define('view.window.AddRowButton', {
+    extend : 'Ext.button.Button',
+    alias: 'widget.addRowButton',
+    text: '+',
+    cls: 'plusButton',
+    listeners: {
+        click: function(b,e) {
+            var parent =  b.up('container');
+            var gParent = parent.up('container');
+            gParent.fireEvent('plusClicked',b);
+        }
+    }
+});
+
+Ext.define('view.window.DeleteRowButton', {
+    extend : 'Ext.button.Button',
+    alias: 'widget.deleteRowButton',
+    text: '—',
+    cls: 'plusButton',
+    listeners: {
+        click: function(b,e) {
+            var parent =  b.up('container');
+            var gParent = parent.up('container');
+            gParent.fireEvent('minusClicked',b);
+        }
+    }
+});
+
+
+
 Ext.define('view.window.FieldRow', {
     extend : 'Ext.Container',
     alias: 'widget.fieldRow',
@@ -76,29 +106,7 @@ Ext.define('view.window.FieldRow', {
             width: 200
         },
         {
-            xtype: 'button',
-            text: '+',
-            cls: 'plusButton',
-            listeners: {
-                click: function(b,e) {
-                    var parent =  b.up('container');
-                    var gParent = parent.up('container');
-                    gParent.fireEvent('plusClicked',b);
-                }
-            }
-        },
-        {
-            xtype: 'button',
-            text: '—',
-            cls: 'plusButton',
-            listeners: {
-                click: function(b,e) {
-                    var parent =  b.up('container');
-                    var gParent = parent.up('container');
-                    gParent.fireEvent('minusClicked',b);
-                }
-            }
+            xtype: 'addRowButton'
         }
-
     ]
 });

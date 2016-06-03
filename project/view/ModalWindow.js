@@ -4,6 +4,7 @@ Ext.define('view.ModalWindow', {
         width:800,
         height:300,
         closeAction:'hide',
+        autoScroll: true,
         plain: true,
         modal: true,
         resizeHandles: 's n',
@@ -15,7 +16,6 @@ Ext.define('view.ModalWindow', {
                 Ext.Msg.alert('Button', 'Help button was pressed.');
             }
         }],
-
         items: [
             {
                xtype: 'scrollableContainer',
