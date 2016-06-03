@@ -4,7 +4,6 @@ Ext.require([
     'store.ComponentsStore',
     'view.window.DateSelectField',
     'view.window.FieldRow',
-    'view.window.RowsContainer',
     'view.window.ScrollableContainer',
     'view.ModalWindow'
     ]);

@@ -2,13 +2,13 @@ Ext.define('view.window.RadioGroup', {
     extend: 'Ext.form.RadioGroup',
     alias: 'widget.filterRadioGroup',
     width: 520,
-    columns: [120,120,120],
+    columns: [120,120,150],
     vertical: false,
-    labelWidth: 95,
+    cls: 'boldLabel',
     items: [
-        {boxLabel: 'RadioButton 1', name: 'rb', inputValue: '1', checked: true},
-        {boxLabel: 'RadioButton 2', name: 'rb', inputValue: '2'},
-        {boxLabel: 'RadioButton 3', name: 'rb', inputValue: '3'}
+        {boxLabel: 'All conditions', name: 'rb', inputValue: '1', checked: true},
+        {boxLabel: 'At least one', name: 'rb', inputValue: '2'},
+        {boxLabel: 'None of conditions', name: 'rb', inputValue: '3'}
     ]
 });
 
@@ -32,21 +32,21 @@ Ext.define('view.window.ButtonGroup', {
             text: 'Apply filter',
             cls: 'gray-button',
             width: 120,
-            height: 20
+            height: 30
         },
         {
             xtype: 'button',
             text: 'Save filter',
             cls: 'gray-button',
             width: 120,
-            height: 20
+            height: 30
         },
         {
             xtype: 'button',
             text: 'Cancel',
             cls: 'gray-button',
             width: 100,
-            height: 20
+            height: 30
         }
     ]
 });
@@ -61,24 +61,25 @@ Ext.define('view.window.ScrollableContainer', {
         margin: '5 5 5 5'
     },
      layout: {
-         type: 'vbox'
+         type: 'vbox',
+         pack: 'left'
      },
      items: [
         {
             xtype: 'textfield',
             name: 'name',
-            fieldLabel: 'Filter name'
+            fieldLabel: 'Filter name',
+            labelCls: 'boldLabel',
+            width: 300
         },
         {
             xtype: 'tbspacer',
-            width: 20,
+            width: 20
         },
         {
             xtype: 'container',
             layout:{
-                type: 'hbox',
-                align: 'center',
-                pack: 'left'
+                type: 'hbox'
             },
             defaults: {
                 margins: '0 5 0 0'
@@ -87,7 +88,8 @@ Ext.define('view.window.ScrollableContainer', {
                 {
                     xtype: 'label',
                     text: 'Filters',
-                    width: 95
+                    width: 95,
+                    cls: 'boldLabel'
                 },
                 {
                     xtype: 'rowsContainer'
@@ -105,17 +107,17 @@ Ext.define('view.window.ScrollableContainer', {
                 {
                     xtype: 'label',
                     text: 'For entry: ',
-                    width: 95
+                    width: 95,
+                    cls: 'boldLabel'
                 },
                 {
                     xtype: 'container',
                     defaults: {
-                        margin: '15 0 0 0'
+                        margin: '0 0 15 0'
                     },
                     layout: {
                         type: 'vbox'
                     },
-                    //width: 520,
                     items: [
                         {
                             xtype: 'filterRadioGroup',

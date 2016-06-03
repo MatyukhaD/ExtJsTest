@@ -26,8 +26,6 @@ Ext.define('view.window.DeleteRowButton', {
     }
 });
 
-
-
 Ext.define('view.window.FieldRow', {
     extend : 'Ext.Container',
     alias: 'widget.fieldRow',
@@ -42,23 +40,6 @@ Ext.define('view.window.FieldRow', {
     },
     autoScroll: true,
     items: [
-        // {
-        //     xtype: 'button',
-        //     text: 'Select this',
-        //     menu: {
-        //         items: [{
-        //             text: 'Item 1',
-        //             handler: function() {
-        //                 console.log('Item 1');
-        //             }
-        //         }, {
-        //             text: 'Item 2',
-        //             handler: function() {
-        //                 console.log('Item 2');
-        //             }
-        //         }]
-        //     }
-        // }
         {
             xtype: 'combo',
             name: 'select1',

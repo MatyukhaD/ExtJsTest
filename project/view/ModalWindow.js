@@ -1,7 +1,7 @@
 Ext.define('view.ModalWindow', {
         extend : 'Ext.window.Window',
         requires: ['view.window.ScrollableContainer'],
-        width:800,
+        width:690,
         height:300,
         closeAction:'hide',
         cls: 'mainWindow',
@@ -18,7 +18,7 @@ Ext.define('view.ModalWindow', {
         header: {
             cls: 'headerCls'
         },
-        title: 'Filters',
+        title: 'Filter',
         tools:[{
             id:'help',
             qtip: 'Go to help page',
@@ -29,8 +29,7 @@ Ext.define('view.ModalWindow', {
         ],
         items: [
             {
-               xtype: 'scrollableContainer',
-               id: 'mainContainer'
+               xtype: 'scrollableContainer'
             }
         ]
 });

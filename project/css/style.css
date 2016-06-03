@@ -39,11 +39,12 @@
 }
 
 .windowBody {
-    /*width: 800px !important;*/
     margin-top: 10px;
-    /*color: white;*/
     background-color: white;
+    box-sizing: border-box;
+    padding: 10px;
 }
+
 
 .headerCls {
     background-color: gray;
@@ -79,11 +80,51 @@
 }
 
 .gray-button {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#f4f5f5), to(#CCCCCC));
-    background-image: -webkit-linear-gradient(top, #f4f5f5, #CCCCCC);
-    background-image: -moz-linear-gradient(top, #f4f5f5, #CCCCCC);
-    background-image: -ms-linear-gradient(top, #f4f5f5, #CCCCCC);
-    background-image: -o-linear-gradient(top, #f4f5f5, #CCCCCC);
-    background-image: linear-gradient(to bottom, #f4f5f5, #CCCCCC);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#f4f5f5, endColorstr=#CCCCCC);
+    font-size: 14px;
+    background-color: #E6E6E6; background-image: -webkit-gradient(linear, left top, left bottom, from(#E6E6E6), to(#CCCCCC));
+    background-image: -webkit-linear-gradient(top, #E6E6E6, #CCCCCC);
+    background-image: -moz-linear-gradient(top, #E6E6E6, #CCCCCC);
+    background-image: -ms-linear-gradient(top, #E6E6E6, #CCCCCC);
+    background-image: -o-linear-gradient(top, #E6E6E6, #CCCCCC);
+    background-image: linear-gradient(to bottom, #E6E6E6, #CCCCCC);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#E6E6E6, endColorstr=#CCCCCC);
+}
+
+.gray-button.x-btn-default-small-over {
+     /*font-size: 14px;*/
+     background-color: #cdcdcd; background-image: -webkit-gradient(linear, left top, left bottom, from(#cdcdcd), to(#b3b3b3));
+     background-image: -webkit-linear-gradient(top, #cdcdcd, #b3b3b3);
+     background-image: -moz-linear-gradient(top, #cdcdcd, #b3b3b3);
+     background-image: -ms-linear-gradient(top, #cdcdcd, #b3b3b3);
+     background-image: -o-linear-gradient(top, #cdcdcd, #b3b3b3);
+     background-image: linear-gradient(to bottom, #cdcdcd, #b3b3b3);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#cdcdcd, endColorstr=#b3b3b3);
+ }
+
+/* в ext.js 4.2.1 баг, кнопка остаётся focused после нажатия*/
+/*.gray-button.x-btn-default-small-focus {*/
+    /*!*font-size: 14px;*!*/
+    /*background-color: #A8A8A8; background-image: -webkit-gradient(linear, left top, left bottom, from(#A8A8A8), to(#828282));*/
+    /*background-image: -webkit-linear-gradient(top, #A8A8A8, #828282);*/
+    /*background-image: -moz-linear-gradient(top, #A8A8A8, #828282);*/
+    /*background-image: -ms-linear-gradient(top, #A8A8A8, #828282);*/
+    /*background-image: -o-linear-gradient(top, #A8A8A8, #828282);*/
+    /*background-image: linear-gradient(to bottom, #A8A8A8, #828282);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#A8A8A8, endColorstr=#828282);orstr=#b3b3b3);*/
+/*}*/
+
+.gray-button .x-btn-inner{
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.boldLabel {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.boldLabel .x-form-cb-label {
+    font-size: 14px;
+}
+
+input {
+    font-size: 14px !important;
 }
 
