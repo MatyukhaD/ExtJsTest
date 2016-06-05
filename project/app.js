@@ -14,7 +14,6 @@ Ext.application({
     launch : function(){
         var dialog;
         var mainPanel = Ext.create('Ext.panel.Panel', {
-            renderTo: Ext.getBody(),
             layout: {
                 align: 'middle',
                 pack: 'center',
@@ -29,11 +28,8 @@ Ext.application({
                     cls: 'mainButton',
                     listeners: {        
                        click: function(b,e) {
-                            if (!dialog)  {
-                               dialog  = Ext.create('view.ModalWindow');
-                            }
-
-                            dialog.show(this);
+                           dialog  = Ext.create('view.ModalWindow');
+                           dialog.show();
                         }
                     }
                 }

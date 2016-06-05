@@ -32,21 +32,27 @@ Ext.define('view.window.ButtonGroup', {
             text: 'Apply filter',
             cls: 'gray-button',
             width: 120,
-            height: 30
+            height: 30,
+            focusCls: '',
+            pressedCls: 'gray-button-pressed'
         },
         {
             xtype: 'button',
             text: 'Save filter',
             cls: 'gray-button',
             width: 120,
-            height: 30
+            height: 30,
+            focusCls: '',
+            pressedCls: 'gray-button-pressed'
         },
         {
             xtype: 'button',
             text: 'Cancel',
             cls: 'gray-button',
             width: 100,
-            height: 30
+            height: 30,
+            focusCls: '',
+            pressedCls: 'gray-button-pressed'
         }
     ]
 });

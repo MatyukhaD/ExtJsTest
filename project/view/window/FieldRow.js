@@ -4,10 +4,10 @@ Ext.define('view.window.AddRowButton', {
     text: '+',
     cls: 'plusButton',
     listeners: {
-        click: function(b,e) {
-            var parent =  b.up('container');
-            var gParent = parent.up('container');
-            gParent.fireEvent('plusClicked',b);
+        click: function(b) {
+            var rowsContainer = this.findParentByType('rowsContainer');
+            var btnRow = b.findParentByType('fieldRow');
+            rowsContainer.fireEvent('plusClicked', b, btnRow);
         }
     }
 });
@@ -18,10 +18,66 @@ Ext.define('view.window.DeleteRowButton', {
     text: '—',
     cls: 'plusButton',
     listeners: {
-        click: function(b,e) {
-            var parent =  b.up('container');
-            var gParent = parent.up('container');
-            gParent.fireEvent('minusClicked',b);
+        click: function(b) {
+            var rowsContainer = this.findParentByType('rowsContainer');
+            var btnRow = b.findParentByType('fieldRow');
+            rowsContainer.fireEvent('minusClicked', b, btnRow);
+        }
+    }
+});
+
+
+Ext.define('view.window.CustomSelect', {
+    extend : 'Ext.form.field.ComboBox',
+    alias: 'widget.customSelect',
+    emptyText: 'Select this',
+    fieldCls: 'gray-button',
+    store: Ext.create('store.ComponentsStore'),
+    width: 150,
+    queryMode: 'local',
+    displayField: 'name',
+    valueField: 'value',
+    editable: false,
+    listeners: {
+        'select': function (combo, selection) {
+            if (selection && selection[0] && selection[0].data) {
+                var selectedValue = selection[0].data.value;
+
+                var parent = combo.findParentByType('fieldRow');
+                var textField = parent.query('#textField')[0];
+                var dateField = parent.query('dateField')[0];
+                if (selectedValue === 'date' && dateField.isVisible()) {
+                    return;
+                }
+
+                if (selectedValue !== 'date' && textField.isVisible()) {
+                    return;
+                }
+
+                textField.setVisible(selectedValue !== 'date');
+                dateField.setVisible(selectedValue === 'date')
+
+                // var selectedValue = selection[0].data.value;
+                //
+                // var parent = combo.findParentByType('fieldRow');
+                // var textField = parent.query('#textField')[0];
+                // var dateField = parent.query('dateField')[0];
+                //
+                // if (selectedValue === 'date' && dateField) {
+                //     return;
+                // }
+                //
+                // if (selectedValue !== 'date' && textField) {
+                //     return;
+                // }
+                //
+                // var targetIndex = parent.items.indexOf(textField ? textField : dateField);
+                //
+                // var createAlias = (selectedValue === 'date') ? 'widget.dateField' : 'textfield';
+                // var newField = Ext.create(createAlias);
+                // parent.remove(visibleComponent);
+                // parent.insert(targetIndex,newField);
+            }
         }
     }
 });
@@ -41,50 +97,7 @@ Ext.define('view.window.FieldRow', {
     autoScroll: true,
     items: [
         {
-            xtype: 'combo',
-            name: 'select1',
-            emptyText: 'Select this',
-            fieldCls: 'gray-button',
-            //store: Ext.create('store.ComponentsStore'),
-            store: Ext.create('store.ComponentsStore'),
-
-            width: 150,
-            queryMode: 'local',
-            displayField: 'name',
-            valueField: 'value',
-            renderTo: Ext.getBody(),
-            editable: false,
-            listeners: {
-                'select': function (combo, selection) {
-                    if (selection && selection[0]  && selection[0].data) {
-                        var parent = combo.up('container');
-                        var value = selection[0].data.value;
-                        var visibleComponent = parent.items.get(2);
-                        if (!visibleComponent) {
-                            return;
-                        }
-
-                        var parent = combo.up('fieldRow');
-                        if (value === 'date') {
-                            if (visibleComponent.xtype !== 'dateSelect') {
-                                parent.remove(visibleComponent);
-                                parent.insert(2,Ext.create('widget.dateSelect'));
-                            }
-                        }
-                        else {
-                            if (visibleComponent.xtype !== 'textfield') {
-                                parent.remove(visibleComponent);
-                                parent.insert(2,{
-                                    xtype: 'textfield',
-                                    name: 'typeSymbol',
-                                    emptyText: 'Type symbol',
-                                    width: 200
-                                });
-                            }
-                        }
-                    }
-                }
-            }
+            xtype: 'customSelect'
         },
         {
             xtype: 'combo',
@@ -96,17 +109,25 @@ Ext.define('view.window.FieldRow', {
             queryMode: 'local',
             displayField: 'name',
             valueField: 'value',
-            renderTo: Ext.getBody(),
             editable: false
         },
         {
             xtype: 'textfield',
+            itemId: 'textField',
             name: 'typeSymbol',
             emptyText: 'Type symbol',
             width: 210
         },
         {
+            xtype: 'dateField',
+            hidden: true
+
+        },
+        {
             xtype: 'addRowButton'
+        },
+        {
+            xtype: 'deleteRowButton'
         }
     ]
 });

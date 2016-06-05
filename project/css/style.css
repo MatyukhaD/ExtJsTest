@@ -99,16 +99,15 @@
      background-image: linear-gradient(to bottom, #cdcdcd, #b3b3b3);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#cdcdcd, endColorstr=#b3b3b3);
  }
 
-/* в ext.js 4.2.1 баг, кнопка остаётся focused после нажатия*/
-/*.gray-button.x-btn-default-small-focus {*/
-    /*!*font-size: 14px;*!*/
-    /*background-color: #A8A8A8; background-image: -webkit-gradient(linear, left top, left bottom, from(#A8A8A8), to(#828282));*/
-    /*background-image: -webkit-linear-gradient(top, #A8A8A8, #828282);*/
-    /*background-image: -moz-linear-gradient(top, #A8A8A8, #828282);*/
-    /*background-image: -ms-linear-gradient(top, #A8A8A8, #828282);*/
-    /*background-image: -o-linear-gradient(top, #A8A8A8, #828282);*/
-    /*background-image: linear-gradient(to bottom, #A8A8A8, #828282);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#A8A8A8, endColorstr=#828282);orstr=#b3b3b3);*/
-/*}*/
+.x-btn-default-small-gray-button-pressed {
+    /*font-size: 14px;*/
+    background-color: #A8A8A8; background-image: -webkit-gradient(linear, left top, left bottom, from(#a3a3a3), to(#828282)) !important;
+    background-image: -webkit-linear-gradient(top, #a3a3a3, #828282) !important;
+    background-image: -moz-linear-gradient(top, #a3a3a3, #828282)!important;
+    background-image: -ms-linear-gradient(top, #a3a3a3, #828282)!important;
+    background-image: -o-linear-gradient(top, #a3a3a3, #828282)!important;
+    background-image: linear-gradient(to bottom, #a3a3a3, #828282);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#a3a3a3, endColorstr=#828282) !important;
+}
 
 .gray-button .x-btn-inner{
     font-size: 14px;

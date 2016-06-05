@@ -1,6 +1,6 @@
 Ext.define('view.window.DateSelectField', {
     extend : 'Ext.Container',
-    alias: 'widget.dateSelect',
+    alias: 'widget.dateField',
     width: 210,
     layout:{
         type: 'hbox',
@@ -20,8 +20,7 @@ Ext.define('view.window.DateSelectField', {
             width: 60,
             queryMode: 'local',
             displayField: 'name',
-            valueField: 'value',
-            renderTo: Ext.getBody()
+            valueField: 'value'
         },
         {
             xtype: 'combo',
@@ -32,8 +31,7 @@ Ext.define('view.window.DateSelectField', {
             width: 60,
             queryMode: 'local',
             displayField: 'name',
-            valueField: 'value',
-            renderTo: Ext.getBody()
+            valueField: 'value'
         },
         {
             xtype: 'combo',
@@ -44,8 +42,7 @@ Ext.define('view.window.DateSelectField', {
             width: 80,
             queryMode: 'local',
             displayField: 'name',
-            valueField: 'value',
-            renderTo: Ext.getBody()
+            valueField: 'value'
         }
     ]
 });

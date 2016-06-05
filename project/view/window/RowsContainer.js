@@ -12,32 +12,26 @@ Ext.define('view.window.RowsContainer', {
     autoScroll: true,
     listeners: {
         plusClicked: function(button) {
-            
-            var btnRow = button.up('container');
-            var frstValue = btnRow.items.get(0).getValue();
-            var scndValue = btnRow.items.get(1).getValue();
-            var lastIndex = this.items.length - 1;
-
-            btnRow.remove(button);
-            btnRow.add({
-                xtype: 'deleteRowButton'
-            });
-            
+            button.hide();
             this.add({
                 xtype: 'fieldRow'
             })
         },
 
-        minusClicked: function(button) {
-            var btnParent = button.up('container');
-            var rowIndex = this.items.indexOf(btnParent);
-
-            if ((rowIndex === 0) || (rowIndex === this.items.length - 1)) {
+        minusClicked: function(button, row) {
+            if (this.items.getCount() === 1) {
                 return;
             }
 
-            var btnParent = button.up('container');
-            this.remove(btnParent);
+            if (!row.next())  {//это последний элемент в списке строк, значит с + и -
+                var prevRow = row.prev();
+                var addRowBtns = prevRow.query('addRowButton');
+                if (addRowBtns.length > 0) {
+                    addRowBtns[0].show();
+                }
+            }
+
+            this.remove(row);
         }
     },
 
