@@ -15,14 +15,12 @@ Ext.define('view.ModalWindow', {
         fbar: {
             height: 34
         },
-        // headerOverCls :'headerCls',
         header: {
             cls: 'headerCls'
         },
         title: 'Filter',
         tools:[{
              type:'help',
-           // style: 'background-positin: 0 -300px',
             qtip: 'Go to help page',
             handler: function(){
                 Ext.Msg.alert('Button', 'Help button was pressed.');
@@ -33,23 +31,22 @@ Ext.define('view.ModalWindow', {
             {
                xtype: 'scrollableContainer'
             }
-        ]
-    //,
-    // listeners: {
-    //     move: function(in_this, x, y){
-    //         var maxX = Ext.getBody().getViewSize().width-20;
-    //         var maxY = Ext.getBody().getViewSize().height-20;
-    //         x = parseInt(x);
-    //         y = parseInt(y);
-    //         if(x < 0 || x > maxX || y < 0 || y > maxY) {
-    //             y = Math.max(0,y);
-    //             y = Math.min(y,maxY - in_this.getHeight());
-    //
-    //             x = Math.max(0,x);
-    //             x = Math.min(x, maxX - in_this.getWidth());
-    //
-    //             in_this.setPosition(x, y);
-    //         }
-    //     }
-    // }
+        ],
+        listeners: {
+            move: function(in_this, x, y){
+                var maxX = Ext.getBody().getViewSize().width-20;
+                var maxY = Ext.getBody().getViewSize().height-20;
+                x = parseInt(x);
+                y = parseInt(y);
+                if(x < 0 || x > maxX || y < 0 || y > maxY) {
+                    y = Math.max(0,y);
+                    y = Math.min(y,maxY - in_this.getHeight());
+
+                    x = Math.max(0,x);
+                    x = Math.min(x, maxX - in_this.getWidth());
+
+                    in_this.setPosition(x, y);
+                }
+            }
+        }
 });

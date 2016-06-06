@@ -56,27 +56,6 @@ Ext.define('view.window.CustomSelect', {
 
                 textField.setVisible(selectedValue !== 'date');
                 dateField.setVisible(selectedValue === 'date')
-
-                // var selectedValue = selection[0].data.value;
-                //
-                // var parent = combo.findParentByType('fieldRow');
-                // var textField = parent.query('#textField')[0];
-                // var dateField = parent.query('dateField')[0];
-                //
-                // if (selectedValue === 'date' && dateField) {
-                //     return;
-                // }
-                //
-                // if (selectedValue !== 'date' && textField) {
-                //     return;
-                // }
-                //
-                // var targetIndex = parent.items.indexOf(textField ? textField : dateField);
-                //
-                // var createAlias = (selectedValue === 'date') ? 'widget.dateField' : 'textfield';
-                // var newField = Ext.create(createAlias);
-                // parent.remove(visibleComponent);
-                // parent.insert(targetIndex,newField);
             }
         }
     }
